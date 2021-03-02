@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<association>
+    <tournament name="Tournoi fédéral d'échecs" winner="bad at chess">
+        <referees>
+            <referee>
+                <name>Dredd</name>
+                <surname>Judge</surname>
+            </referee>
+
+            <referee>
+                <name>Neymar</name>
+                <surname>Jean</surname>
+            </referee>
+        </referees>
+        <Team name="Chess in Love">
+            <player Sid="1111">
+                <Name>John</Name>
+                <Surname>Doe</Surname>
+                <ELO>1000</ELO>
+            </player>
+            <Player Sid="2222">
+                <Name>Jane</Name>
+                <Surname>Doe</Surname>
+                <ELO>1200</ELO>
+            </Player>
+        </Team>
+
+        <Team name="checkMates">
+            <Player Sid="3333">
+                <Name>James</Name>
+                <Surname>Chess</Surname>
+                <ELO>600</ELO>
+            </Player>
+            <Player Sid="4444">
+                <Name>Jessie</Name>
+                <Surname>Chess</Surname>
+                <ELO>700</ELO>
+            </Player>
+        </Team>
+
+        <Team name="Chess4ever">
+            <Player Sid="5555">
+                <Name>Dupont</Name>
+                <Surname>Dupont</Surname>
+                <ELO>1230</ELO>
+            </Player>
+            <Player Sid="6666">
+                <Name>Dupond</Name>
+                <Surname>Dupond</Surname>
+                <ELO>1230</ELO>
+            </Player>
+        </Team>
+
+        <Team name="Bad at chess">
+            <Player Sid="7777">
+                <Name>Kasparov</Name>
+                <Surname>Garry</Surname>
+                <ELO>2799</ELO>
+            </Player>
+            <Player Sid="8888">
+                <Name>Carlsen</Name>
+                <Surname>Magnus</Surname>
+                <ELO>2798</ELO>
+            </Player>
+        </Team>
+
+        <Match date="2020-03-02" hour="13:15" TeamA="Chess in Love" TeamB="checkMates"
+               refereeId="1">
+                <Move chessboard="A">
+                    <From></From>
+                    <To></To>
+                    <PieceMoved></PieceMoved>
+                    <PieceDestroyed></PieceDestroyed>
+                    <Promotion></Promotion>
+                    <!-- OU -->
+                    <Castling type="kingSide"/>
+
+                    <Consequence type="checkmate/pat/check"/>
+                </Move>
+
+
+
+            <Score></Score> <!-- Score equipe A -->
+            <Score></Score> <!-- Score equipe B -->
+
+        </Match>
+
+        <Match date="2020-03-02" hour="14:20" TeamA="chess4ever" TeamB="bad at chess">
+            <Move chessboard="A">
+                <From></From>
+                <To></To>
+                <PieceMoved></PieceMoved>
+                <PieceDestroyed></PieceDestroyed>
+                <Promotion></Promotion>
+                <!-- OU -->
+                <Castling type="kingSide"/>
+
+                <Consequence type="checkmate/pat/check"/>
+            </Move>
+
+
+
+            <Score></Score> <!-- Score equipe A -->
+            <Score></Score> <!-- Score equipe B -->
+
+        </Match>
+
+    </tournament>
+
+    <tournament winner="bad at chess">
+
+        <Team name="Chess in Love">
+            <Player Sid="1111">
+                <Name>John</Name>
+                <Surname>Doe</Surname>
+                <ELO>1000</ELO>
+            </Player>
+            <Player Sid="2222">
+                <Name>Jane</Name>
+                <Surname>Doe</Surname>
+                <ELO>1200</ELO>
+            </Player>
+        </Team>
+
+        <Team name="checkMates">
+            <Player Sid="3333">
+                <Name>James</Name>
+                <Surname>Chess</Surname>
+                <ELO>600</ELO>
+            </Player>
+            <Player Sid="4444">
+                <Name>Jessie</Name>
+                <Surname>Chess</Surname>
+                <ELO>700</ELO>
+            </Player>
+        </Team>
+
+        <Team name="Chess4ever">
+            <Player Sid="5555">
+                <Name>Dupont</Name>
+                <Surname>Dupont</Surname>
+                <ELO>1230</ELO>
+            </Player>
+            <Player Sid="6666">
+                <Name>Dupond</Name>
+                <Surname>Dupond</Surname>
+                <ELO>1230</ELO>
+            </Player>
+        </Team>
+
+        <Team name="Bad at chess">
+            <Player Sid="7777">
+                <Name>Kasparov</Name>
+                <Surname>Garry</Surname>
+                <ELO>2799</ELO>
+            </Player>
+            <Player Sid="8888">
+                <Name>Carlsen</Name>
+                <Surname>Magnus</Surname>
+                <ELO>2798</ELO>
+            </Player>
+        </Team>
+
+        <Match date="2020-03-02" hour="13:15" TeamA="Chess in Love" TeamB="checkMates">
+            <Move chessboard="A">
+                <From></From>
+                <To></To>
+                <PieceMoved></PieceMoved>
+                <PieceDestroyed></PieceDestroyed>
+                <Promotion></Promotion>
+                <!-- OU -->
+                <Castling type="kingSide"/>
+
+                <Consequence type="checkmate/pat/check"/>
+            </Move>
+
+
+
+            <Score></Score> <!-- Score equipe A -->
+            <Score></Score> <!-- Score equipe B -->
+
+        </Match>
+
+        <Match date="2020-03-02" hour="14:20" TeamA="chess4ever" TeamB="bad at chess">
+            <Move chessboard="A">
+                <From></From>
+                <To></To>
+                <PieceMoved></PieceMoved>
+                <PieceDestroyed></PieceDestroyed>
+                <Promotion></Promotion>
+                <!-- OU -->
+                <Castling type="kingSide"/>
+
+                <Consequence type="checkmate/pat/check"/>
+            </Move>
+
+
+
+            <Score></Score> <!-- Score equipe A -->
+            <Score></Score> <!-- Score equipe B -->
+
+        </Match>
+
+    </tournament>
+
+</association>
