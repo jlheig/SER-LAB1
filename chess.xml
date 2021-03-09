@@ -1,23 +1,24 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<association>
-    <tournament name="Tournoi fédéral d'échecs" winner="bad at chess">
-        <referees>
-            <referee>
-                <name>Dredd</name>
-                <surname>Judge</surname>
-            </referee>
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE Association SYSTEM "chess.dtd">
+<Association>
+    <Tournament name="Tournoi fédéral d'échecs" winner="bad at chess">
+        <Referees>
+            <Referee>
+                <Name>Dredd</Name>
+                <Surname>Judge</Surname>
+            </Referee>
 
             <referee>
                 <name>Neymar</name>
                 <surname>Jean</surname>
             </referee>
-        </referees>
+        </Referees>
         <Team name="Chess in Love">
-            <player Sid="1111">
+            <Player Sid="1111">
                 <Name>John</Name>
                 <Surname>Doe</Surname>
                 <ELO>1000</ELO>
-            </player>
+            </Player>
             <Player Sid="2222">
                 <Name>Jane</Name>
                 <Surname>Doe</Surname>
@@ -105,7 +106,7 @@
 
         </Match>
 
-    </tournament>
+    </Tournament>
 
     <tournament winner="bad at chess">
 
@@ -203,4 +204,4 @@
 
     </tournament>
 
-</association>
+</Association>

@@ -1,0 +1,40 @@
+<!-- Elément racine -->
+<!ELEMENT Association (AllPlayers, AllTeams, AllReferees, AllTournaments)>
+
+
+<!-- Joueurs -->
+<!ELEMENT AllPlayers (Player*)>
+<!ELEMENT Player (Name, Surname, ELO)>
+<!ATTLIST Player sid ID>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Surname (#PCDATA)>
+<!ELEMENT ELO (#PCDATA)>
+
+<!-- Equipes -->
+<!ELEMENT AllTeams (Team*)>
+<!ELEMENT Team (Name)>
+<!ATTLIST Team id ID #REQUIRED player1 IDREF player2 IDREF>
+
+<!ELEMENT Teams EMPTY>
+<!ATTLIST Teams id IDREFS>
+
+<!-- Arbitres -->
+<!ELEMENT AllReferees (Referee*)>
+<!ELEMENT Referee (Name, Surname)>
+<!ATTLIST Referee id ID #REQUIRED>
+
+<!ELEMENT Referees EMPTY>
+<!ATTLIST Referees id IDREFS>
+
+<!-- Tournois -->
+<!ELEMENT AllTournaments (Tournament*)>
+<!ELEMENT Tournament (Referees, Teams, Matchs)>
+<!ATTLIST Tournament name CDATA winner IDREF>
+
+<!-- Parties -->
+<!ELEMENT Matchs (Match*)>
+<!ELEMENT Match (Move*, Score+)>
+<!ATTLIST Match date CDATA hour CDATA teamA IDREF teamB IDREF>
+<!ELEMENT Score (#PCDATA)>
+
+<!-- TODO: Mouvements -->
