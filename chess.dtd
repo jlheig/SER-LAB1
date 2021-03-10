@@ -37,4 +37,14 @@
 <!ATTLIST Match date CDATA hour CDATA teamA IDREF teamB IDREF>
 <!ELEMENT Score (#PCDATA)>
 
-<!-- TODO: Mouvements -->
+<!-- WIP: Mouvements -->
+<!ELEMENT Move (From, To, PieceMoved, PieceDestroyed, Promotion, Castling, Consequence)>
+<!ATTLIST Move chessboard CDATA>
+<!ELEMENT From (#PCDATA)>
+<!ELEMENT To (#PCDATA)>
+<!ELEMENT PieceMoved (#PCDATA)>
+<!ELEMENT PieceDestroyed (#PCDATA)>
+<!ELEMENT Promotion (#PCDATA)>
+<!ELEMENT Castling (#PCDATA)>
+<!ELEMENT Consequence (#PCDATA)>
+
