@@ -1,207 +1,148 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE Association SYSTEM "chess.dtd">
 <Association>
-    <Tournament name="Tournoi fédéral d'échecs" winner="bad at chess">
-        <Referees>
-            <Referee>
-                <Name>Dredd</Name>
-                <Surname>Judge</Surname>
-            </Referee>
+    <AllPlayers>
+        <Player sid="P1">
+            <Name>John</Name>
+            <Surname>Doe</Surname>
+            <ELO>1000</ELO>
+        </Player>
+        <Player sid="P2">
+            <Name>Jane</Name>
+            <Surname>Doe</Surname>
+            <ELO>1200</ELO>
+        </Player>
+        <Player sid="P3">
+            <Name>James</Name>
+            <Surname>Chess</Surname>
+            <ELO>600</ELO>
+        </Player>
+        <Player sid="P4">
+            <Name>Jessie</Name>
+            <Surname>Chess</Surname>
+            <ELO>700</ELO>
+        </Player>
+        <Player sid="P5">
+            <Name>Dupont</Name>
+            <Surname>Dupont</Surname>
+            <ELO>1230</ELO>
+        </Player>
+        <Player sid="P6">
+            <Name>Dupond</Name>
+            <Surname>Dupond</Surname>
+            <ELO>1230</ELO>
+        </Player>
+        <Player sid="P7">
+            <Name>Kasparov</Name>
+            <Surname>Garry</Surname>
+            <ELO>2799</ELO>
+        </Player>
+        <Player sid="P8">
+            <Name>Carlsen</Name>
+            <Surname>Magnus</Surname>
+            <ELO>2798</ELO>
+        </Player>
+    </AllPlayers>
 
-            <referee>
-                <name>Neymar</name>
-                <surname>Jean</surname>
-            </referee>
-        </Referees>
-        <Team name="Chess in Love">
-            <Player Sid="1111">
-                <Name>John</Name>
-                <Surname>Doe</Surname>
-                <ELO>1000</ELO>
-            </Player>
-            <Player Sid="2222">
-                <Name>Jane</Name>
-                <Surname>Doe</Surname>
-                <ELO>1200</ELO>
-            </Player>
+    <AllTeams>
+        <Team id="T1" player1="P1" player2="P2">
+            <Name>
+                Chess in Love
+            </Name>
+
         </Team>
 
-        <Team name="checkMates">
-            <Player Sid="3333">
-                <Name>James</Name>
-                <Surname>Chess</Surname>
-                <ELO>600</ELO>
-            </Player>
-            <Player Sid="4444">
-                <Name>Jessie</Name>
-                <Surname>Chess</Surname>
-                <ELO>700</ELO>
-            </Player>
+        <Team id="T2" player1="P3" player2="P4">
+            <Name>
+                checkMates
+            </Name>
+
         </Team>
 
-        <Team name="Chess4ever">
-            <Player Sid="5555">
-                <Name>Dupont</Name>
-                <Surname>Dupont</Surname>
-                <ELO>1230</ELO>
-            </Player>
-            <Player Sid="6666">
-                <Name>Dupond</Name>
-                <Surname>Dupond</Surname>
-                <ELO>1230</ELO>
-            </Player>
+        <Team id="T3" player1="P5" player2="P6">
+            <Name>
+                Chess4ever
+            </Name>
+
         </Team>
 
-        <Team name="Bad at chess">
-            <Player Sid="7777">
-                <Name>Kasparov</Name>
-                <Surname>Garry</Surname>
-                <ELO>2799</ELO>
-            </Player>
-            <Player Sid="8888">
-                <Name>Carlsen</Name>
-                <Surname>Magnus</Surname>
-                <ELO>2798</ELO>
-            </Player>
+        <Team id="T4" player1="P7" player2="P8">
+            <Name>
+                Bad at chess
+            </Name>
+
         </Team>
+    </AllTeams>
 
-        <Match date="2020-03-02" hour="13:15" TeamA="Chess in Love" TeamB="checkMates"
-               refereeId="1">
-                <Move chessboard="A">
-                    <From></From>
-                    <To></To>
-                    <PieceMoved></PieceMoved>
-                    <PieceDestroyed></PieceDestroyed>
-                    <Promotion></Promotion>
-                    <!-- OU -->
-                    <Castling type="kingSide"/>
+    <AllReferees>
+        <Referee id="R1">
+            <Name>Dredd</Name>
+            <Surname>Judge</Surname>
+        </Referee>
 
-                    <Consequence type="checkmate/pat/check"/>
-                </Move>
+        <Referee id="R2">
+            <Name>Neymar</Name>
+            <Surname>Jean</Surname>
+        </Referee>
+    </AllReferees>
 
+    <AllTournaments>
+        <Tournament name="Tournoi fédéral d'échecs" winner="T4">
+            <Referees id="R1 R2"/>
+            <Teams id="T1 T2 T3 T4"/>
 
+            <Matchs>
+                <Match date="2020-03-02" hour="13:15" teamA="T1" teamB="T2"
+                       refereeId="R1">
+                    <Move chessboard="A">
+                        <From>A3</From>
+                        <To>B4</To>
+                        <PieceMoved type="Pawn"/>
+                    </Move>
 
-            <Score></Score> <!-- Score equipe A -->
-            <Score></Score> <!-- Score equipe B -->
+                    <Move chessboard="B">
+                        <From>A4</From>
+                        <To>D5</To>
+                        <PieceMoved type="Queen"/>
+                    </Move>
 
-        </Match>
+                    <Move chessboard="B">
+                        <From>A4</From>
+                        <To>D6</To>
+                        <PieceMoved type="Rook"/>
+                        <PieceDestroyed type="Bishop"/>
+                        <Promotion type="Bishop"/>
+                    </Move>
 
-        <Match date="2020-03-02" hour="14:20" TeamA="chess4ever" TeamB="bad at chess">
-            <Move chessboard="A">
-                <From></From>
-                <To></To>
-                <PieceMoved></PieceMoved>
-                <PieceDestroyed></PieceDestroyed>
-                <Promotion></Promotion>
-                <!-- OU -->
-                <Castling type="kingSide"/>
+                    <Move chessboard="A">
+                        <From>F4</From>
+                        <To>D6</To>
+                        <PieceMoved type="Rook"/>
+                        <Consequence type="Pat"/>
+                    </Move>
 
-                <Consequence type="checkmate/pat/check"/>
-            </Move>
+                    <Move chessboard="A">
+                        <Castling side="kingSide"/>
+                    </Move>
 
+                    <Score>1</Score> <!-- Score equipe A -->
+                    <Score>1</Score> <!-- Score equipe B -->
 
+                </Match>
 
-            <Score></Score> <!-- Score equipe A -->
-            <Score></Score> <!-- Score equipe B -->
-
-        </Match>
-
-    </Tournament>
-
-    <tournament winner="bad at chess">
-
-        <Team name="Chess in Love">
-            <Player Sid="1111">
-                <Name>John</Name>
-                <Surname>Doe</Surname>
-                <ELO>1000</ELO>
-            </Player>
-            <Player Sid="2222">
-                <Name>Jane</Name>
-                <Surname>Doe</Surname>
-                <ELO>1200</ELO>
-            </Player>
-        </Team>
-
-        <Team name="checkMates">
-            <Player Sid="3333">
-                <Name>James</Name>
-                <Surname>Chess</Surname>
-                <ELO>600</ELO>
-            </Player>
-            <Player Sid="4444">
-                <Name>Jessie</Name>
-                <Surname>Chess</Surname>
-                <ELO>700</ELO>
-            </Player>
-        </Team>
-
-        <Team name="Chess4ever">
-            <Player Sid="5555">
-                <Name>Dupont</Name>
-                <Surname>Dupont</Surname>
-                <ELO>1230</ELO>
-            </Player>
-            <Player Sid="6666">
-                <Name>Dupond</Name>
-                <Surname>Dupond</Surname>
-                <ELO>1230</ELO>
-            </Player>
-        </Team>
-
-        <Team name="Bad at chess">
-            <Player Sid="7777">
-                <Name>Kasparov</Name>
-                <Surname>Garry</Surname>
-                <ELO>2799</ELO>
-            </Player>
-            <Player Sid="8888">
-                <Name>Carlsen</Name>
-                <Surname>Magnus</Surname>
-                <ELO>2798</ELO>
-            </Player>
-        </Team>
-
-        <Match date="2020-03-02" hour="13:15" TeamA="Chess in Love" TeamB="checkMates">
-            <Move chessboard="A">
-                <From></From>
-                <To></To>
-                <PieceMoved></PieceMoved>
-                <PieceDestroyed></PieceDestroyed>
-                <Promotion></Promotion>
-                <!-- OU -->
-                <Castling type="kingSide"/>
-
-                <Consequence type="checkmate/pat/check"/>
-            </Move>
+                <Match date="2020-03-02" hour="14:20" teamA="T3" teamB="T4" refereeId="R2">
+                    <Move chessboard="A">
+                        <From>A3</From>
+                        <To>B4</To>
+                        <PieceMoved type="Pawn"/>
+                    </Move>
+                    <Score>0</Score>
+                    <Score>2</Score>
+                </Match>
+            </Matchs>
 
 
-
-            <Score></Score> <!-- Score equipe A -->
-            <Score></Score> <!-- Score equipe B -->
-
-        </Match>
-
-        <Match date="2020-03-02" hour="14:20" TeamA="chess4ever" TeamB="bad at chess">
-            <Move chessboard="A">
-                <From></From>
-                <To></To>
-                <PieceMoved></PieceMoved>
-                <PieceDestroyed></PieceDestroyed>
-                <Promotion></Promotion>
-                <!-- OU -->
-                <Castling type="kingSide"/>
-
-                <Consequence type="checkmate/pat/check"/>
-            </Move>
-
-
-
-            <Score></Score> <!-- Score equipe A -->
-            <Score></Score> <!-- Score equipe B -->
-
-        </Match>
-
-    </tournament>
-
+        </Tournament>
+    </AllTournaments>
+    <!--TODO: Rajouter un autre tournoi -->
 </Association>

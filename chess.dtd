@@ -5,7 +5,7 @@
 <!-- Joueurs -->
 <!ELEMENT AllPlayers (Player*)>
 <!ELEMENT Player (Name, Surname, ELO)>
-<!ATTLIST Player sid ID>
+<!ATTLIST Player sid ID #REQUIRED>
 <!ELEMENT Name (#PCDATA)>
 <!ELEMENT Surname (#PCDATA)>
 <!ELEMENT ELO (#PCDATA)>
@@ -13,10 +13,12 @@
 <!-- Equipes -->
 <!ELEMENT AllTeams (Team*)>
 <!ELEMENT Team (Name)>
-<!ATTLIST Team id ID #REQUIRED player1 IDREF player2 IDREF>
+<!ATTLIST Team id ID #REQUIRED  >
+<!ATTLIST Team player1 IDREF #REQUIRED>
+<!ATTLIST Team player2 IDREF #REQUIRED>
 
 <!ELEMENT Teams EMPTY>
-<!ATTLIST Teams id IDREFS>
+<!ATTLIST Teams id IDREFS #REQUIRED>
 
 <!-- Arbitres -->
 <!ELEMENT AllReferees (Referee*)>
@@ -24,32 +26,37 @@
 <!ATTLIST Referee id ID #REQUIRED>
 
 <!ELEMENT Referees EMPTY>
-<!ATTLIST Referees id IDREFS>
+<!ATTLIST Referees id IDREFS #REQUIRED>
 
 <!-- Tournois -->
 <!ELEMENT AllTournaments (Tournament*)>
 <!ELEMENT Tournament (Referees, Teams, Matchs)>
-<!ATTLIST Tournament name CDATA winner IDREF>
+<!ATTLIST Tournament name CDATA #IMPLIED>
+<!ATTLIST Tournament winner IDREF #REQUIRED>
 
 <!-- Parties -->
 <!ELEMENT Matchs (Match*)>
 <!ELEMENT Match (Move*, Score, Score)>
-<!ATTLIST Match date CDATA hour CDATA teamA IDREF teamB IDREF>
+<!ATTLIST Match date CDATA #REQUIRED >
+<!ATTLIST Match hour CDATA #REQUIRED>
+<!ATTLIST Match teamA IDREF #REQUIRED>
+<!ATTLIST Match teamB IDREF #REQUIRED>
+<!ATTLIST Match refereeId IDREF #REQUIRED>
 <!ELEMENT Score (#PCDATA)>
 
 <!-- WIP: Mouvements -->
-<!ELEMENT Move (From, To, PieceMoved, PieceDestroyed?, Promotion?, Consequence?) | (Castling, Consequence?)>
-<!ATTLIST Move chessboard (A|B)>
+<!ELEMENT Move ( (From, To, PieceMoved, PieceDestroyed?, Promotion?, Consequence?) | (Castling, Consequence?) )>
+<!ATTLIST Move chessboard (A|B) #REQUIRED>
 <!ELEMENT From (#PCDATA)>
 <!ELEMENT To (#PCDATA)>
 <!ELEMENT PieceMoved EMPTY>
-<!ATTLIST PieceMoved type (Rook|Knight|Bishop|Queen|King|Pawn)>
-<!ELEMENT PieceDestroyed (#PCDATA)>
-<!ATTLIST PieceDestroyed type (Rook|Knight|Bishop|Queen|Pawn)>
-<!ELEMENT Promotion (#PCDATA)>
-<!ATTLIST Promotion type (Rook|Knight|Bishop|Queen)>
+<!ATTLIST PieceMoved type (Rook|Knight|Bishop|Queen|King|Pawn) #REQUIRED>
+<!ELEMENT PieceDestroyed EMPTY>
+<!ATTLIST PieceDestroyed type (Rook|Knight|Bishop|Queen|Pawn) #REQUIRED>
+<!ELEMENT Promotion EMPTY>
+<!ATTLIST Promotion type (Rook|Knight|Bishop|Queen) #REQUIRED>
 <!ELEMENT Castling EMPTY>
-<!ATTLIST side (kingSide|queenSide) >
+<!ATTLIST Castling side (kingSide|queenSide) #REQUIRED>
 <!ELEMENT Consequence EMPTY>
-<!ATTLIST Consequence type (Check|Checkmate|Pat)>
+<!ATTLIST Consequence type (Check|Checkmate|Pat) #REQUIRED>
 
