@@ -33,18 +33,23 @@
 
 <!-- Parties -->
 <!ELEMENT Matchs (Match*)>
-<!ELEMENT Match (Move*, Score+)>
+<!ELEMENT Match (Move*, Score, Score)>
 <!ATTLIST Match date CDATA hour CDATA teamA IDREF teamB IDREF>
 <!ELEMENT Score (#PCDATA)>
 
 <!-- WIP: Mouvements -->
-<!ELEMENT Move (From, To, PieceMoved, PieceDestroyed, Promotion, Castling, Consequence)>
-<!ATTLIST Move chessboard CDATA>
+<!ELEMENT Move (From, To, PieceMoved, PieceDestroyed?, Promotion?, Consequence?) | (Castling, Consequence?)>
+<!ATTLIST Move chessboard (A|B)>
 <!ELEMENT From (#PCDATA)>
 <!ELEMENT To (#PCDATA)>
-<!ELEMENT PieceMoved (#PCDATA)>
+<!ELEMENT PieceMoved EMPTY>
+<!ATTLIST PieceMoved type (Rook|Knight|Bishop|Queen|King|Pawn)>
 <!ELEMENT PieceDestroyed (#PCDATA)>
+<!ATTLIST PieceDestroyed type (Rook|Knight|Bishop|Queen|Pawn)>
 <!ELEMENT Promotion (#PCDATA)>
-<!ELEMENT Castling (#PCDATA)>
-<!ELEMENT Consequence (#PCDATA)>
+<!ATTLIST Promotion type (Rook|Knight|Bishop|Queen)>
+<!ELEMENT Castling EMPTY>
+<!ATTLIST side (kingSide|queenSide) >
+<!ELEMENT Consequence EMPTY>
+<!ATTLIST Consequence type (Check|Checkmate|Pat)>
 
