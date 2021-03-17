@@ -42,6 +42,16 @@
             <Surname>Magnus</Surname>
             <ELO>2798</ELO>
         </Player>
+        <Player sid="P9">
+            <Name>Nakamura</Name>
+            <Surname>Hikaru</Surname>
+            <ELO>2797</ELO>
+        </Player>
+        <Player sid="P10">
+            <Name>Vachier-Lagrave</Name>
+            <Surname>Maxime</Surname>
+            <ELO>2796</ELO>
+        </Player>
     </AllPlayers>
 
     <AllTeams>
@@ -72,6 +82,12 @@
             </Name>
 
         </Team>
+        <Team id="T5" player1="P9" player2="P10">
+            <Name>
+                Blitz Kings
+            </Name>
+
+        </Team>
     </AllTeams>
 
     <AllReferees>
@@ -82,6 +98,11 @@
 
         <Referee id="R2">
             <Name>Neymar</Name>
+            <Surname>Jean</Surname>
+        </Referee>
+
+        <Referee id="R3">
+            <Name>Peuplu</Name>
             <Surname>Jean</Surname>
         </Referee>
     </AllReferees>
@@ -143,6 +164,83 @@
 
 
         </Tournament>
+        <Tournament name="Tournoi duo Blitz" winner="T5">
+            <Referees id="R2 R3"/>
+            <Teams id="T1 T3 T4 T5"/>
+            <Matchs>
+                <Match date="2021-04-04" hour="14:00" teamA="T1" teamB="T5" refereeId="R3">
+                    <Move chessboard="A">
+                        <From>A8</From>
+                        <To>A2</To>
+                        <PieceMoved type="Rook"/>
+                        <PieceDestroyed type="Pawn"/>
+                    </Move>
+                    <Move chessboard="B">
+                        <From>F8</From>
+                        <To>F2</To>
+                        <PieceMoved type="Rook"/>
+                        <PieceDestroyed type="Knight"/>
+                    </Move>
+                    <Score>0</Score>
+                    <Score>2</Score>
+                </Match>
+                <Match date="2021-04-04" hour="14:00" teamA="T3" teamB="T4" refereeId="R2">
+                    <Move chessboard="A">
+                        <From>C5</From>
+                        <To>E4</To>
+                        <PieceMoved type="Knight"/>
+                        <PieceDestroyed type="Queen"/>
+                        <Consequence type="Check"/>
+                    </Move>
+                    <Move chessboard="A">
+                        <From>C5</From>
+                        <To>F2</To>
+                        <PieceMoved type="Bishop"/>
+                        <PieceDestroyed type="Pawn"/>
+                        <Consequence type="Check"/>
+                    </Move>
+                    <Move chessboard="B">
+                        <From>D5</From>
+                        <To>E4</To>
+                        <PieceMoved type="Bishop"/>
+                        <PieceDestroyed type="Knight"/>
+                    </Move>
+                    <Move chessboard="B">
+                        <From>C3</From>
+                        <To>C4</To>
+                        <PieceMoved type="Queen"/>
+                        <PieceDestroyed type="Rook"/>
+                    </Move>
+                    <Score>0</Score>
+                    <Score>2</Score>
+                </Match>
+                <Match date="2021-04-04" hour="14:45" teamA="T4" teamB="T5" refereeId="R3">
+                    <Move chessboard="A">
+                        <From>A7</From>
+                        <To>A5</To>
+                        <PieceMoved type="Pawn"/>
+                    </Move>
+                    <Move chessboard="B">
+                        <From>D7</From>
+                        <To>F7</To>
+                        <PieceMoved type="Rook"/>
+                    </Move>
+                    <Move chessboard="A">
+                        <From>A7</From>
+                        <To>D3</To>
+                        <PieceMoved type="Bishop"/>
+                    </Move>
+                    <Move chessboard="B">
+                        <From>A7</From>
+                        <To>A8</To>
+                        <PieceMoved type="Pawn"/>
+                        <Promotion type="Queen"/>
+                        <Consequence type="Check"/>
+                    </Move>
+                    <Score>0.5</Score>
+                    <Score>1.5</Score>
+                </Match>
+            </Matchs>
+        </Tournament>
     </AllTournaments>
-    <!--TODO: Rajouter un autre tournoi -->
 </Association>
